@@ -1,14 +1,13 @@
 body {
   color: #5a6275;
   font-family: "Poppins", sans-serif;
-  max-width: 65%;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .app {
   border: 1px solid #adb2be;
   border-radius: 4px;
-  margin: 0 auto;
   padding: 10px 40px;
 }
 
@@ -32,13 +31,14 @@ footer {
   text-align: right;
 }
 
-.weatherEmoji {
+.icon {
   font-size: 150px;
   text-align: center;
 }
 
 #weather-description {
   font-size: 12px;
+  text-transform: capitalize;
 }
 
 .weatherNow {
