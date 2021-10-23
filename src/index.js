@@ -58,6 +58,7 @@ hourNow.innerHTML = `${hour}`;
 minuteNow.innerHTML = `${minute}`;
 
 //Show City Temperature Description when submitting
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureNow = document.querySelector("#temperature-now");
@@ -85,20 +86,23 @@ function showTemperature(response) {
   );
 }
 
-function displayCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  console.log(searchInput.value);
-  let cityName = document.querySelector("#city");
-  cityName.innerHTML = `${searchInput.value}`;
+function search(city) {
   let units = `metric`;
   let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
 
-let searchBar = document.querySelector("#search-form");
-searchBar.addEventListener("submit", displayCity);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-text-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Tiong Bahru");
 
 //Current Location Button
 //Show City Temperature Desciption when clicking button
