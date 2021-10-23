@@ -26,124 +26,125 @@
 
   <body>
     <div class="container">
-      <form class="form-inline" id="search-form">
+      <div class="app">
+        <form class="form-inline" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                autocomplete="off"
+                autofocus="off"
+                id="search-text-input"
+              />
+            </div>
+
+            <div class="col-3">
+              <button
+                class="btn btn-primary my-2 my-sm-0 search"
+                type="submit"
+                id="city-searched"
+              >
+                <div>Search</div>
+              </button>
+
+              <button
+                class="btn btn-success my-2 my-sm-0"
+                type="submit"
+                id="current-location"
+              >
+                <div>Current</div>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <h1 id="city">
+          London,
+          <br />
+          United Kingdom
+        </h1>
+
+        <h2>
+          <span id="display-date">23</span>
+          <span id="display-month">September</span>
+          <span id="display-year">2021</span>
+          <br />
+          <span id="display-day">Thursday</span>
+          <br />
+          <span id="display-hour">21</span>:<span id="display-minute">00</span>
+        </h2>
+
         <div class="row">
-          <div class="col-9">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              autocomplete="off"
-              autofocus="off"
-              id="search-text-input"
-            />
-          </div>
-
-          <div class="col-3">
-            <button
-              class="btn btn-primary my-2 my-sm-0 search"
-              type="submit"
-              id="city-searched"
-            >
-              <div>Search</div>
-            </button>
-
-            <button
-              class="btn btn-success my-2 my-sm-0"
-              type="submit"
-              id="current-location"
-            >
-              <div>Current</div>
-            </button>
+          <div class="col weatherEmoji">⛅</div>
+          <div class="col weatherNow">
+            <span id="temperature-now">10</span>
+            <span id="units">
+              <span id="unitC">°C</span>
+              <span id="unitF">|°F </span>
+            </span>
+            <div id="weather-description">mostly cloudy</div>
           </div>
         </div>
-      </form>
 
-      <h1 id="city">
-        London,
-        <br />
-        United Kingdom
-      </h1>
-
-      <h2>
-        <span id="display-date">23</span>
-        <span id="display-month">September</span>
-        <span id="display-year">2021</span>
-        <br />
-        <span id="display-day">Thursday</span>
-        <br />
-        <span id="display-hour">21</span>:<span id="display-minute">00</span>
-      </h2>
-
-      <div class="row">
-        <div class="col weatherEmoji">⛅</div>
-        <div class="col weatherNow">
-          <span id="temperature-now">10</span>
-          <span id="units">
-            <span id="unitC">°C</span>
-            <span id="unitF">|°F </span>
-          </span>
-          <div id="weather-description">mostly cloudy</div>
+        <div class="row properties">
+          <div class="col">Humidity: <span id="humidity">0</span>%</div>
+          <div class="col">Windspeed: <span id="wind-speed">0</span>km/h</div>
         </div>
-      </div>
 
-      <div class="row properties">
-        <div class="col">Precipitation: <span id="precipitation">0</span>%</div>
-        <div class="col">Humidity: <span id="humidity">0</span>%</div>
-        <div class="col">Windspeed: <span id="wind-speed">0</span>km/h</div>
-      </div>
+        <div class="forecast">
+          <div class="row">
+            <div class="col">
+              &nbsp
+              <div class="col minimumTemperature">Min</div>
+              <div class="col maximumTemperature">Max</div>
+            </div>
 
-      <div class="forecast">
-        <div class="row">
-          <div class="col">
-            &nbsp
-            <div class="col minimumTemperature">Min</div>
-            <div class="col maximumTemperature">Max</div>
-          </div>
+            <div class="col">
+              Fri
+              <div class="col minimumTemperature">11°C</div>
+              <div class="col maximumTemperature">20°C</div>
+            </div>
 
-          <div class="col">
-            Fri
-            <div class="col minimumTemperature">11°C</div>
-            <div class="col maximumTemperature">20°C</div>
-          </div>
+            <div class="col">
+              Sat
+              <div class="col minimumTemperature">13°C</div>
+              <div class="col maximumTemperature">19°C</div>
+            </div>
 
-          <div class="col">
-            Sat
-            <div class="col minimumTemperature">13°C</div>
-            <div class="col maximumTemperature">19°C</div>
-          </div>
+            <div class="col">
+              Sun
+              <div class="col minimumTemperature">14°C</div>
+              <div class="col maximumTemperature">21°C</div>
+            </div>
 
-          <div class="col">
-            Sun
-            <div class="col minimumTemperature">14°C</div>
-            <div class="col maximumTemperature">21°C</div>
-          </div>
+            <div class="col">
+              Mon
+              <div class="col minimumTemperature">9°C</div>
+              <div class="col maximumTemperature">16°C</div>
+            </div>
 
-          <div class="col">
-            Mon
-            <div class="col minimumTemperature">9°C</div>
-            <div class="col maximumTemperature">16°C</div>
-          </div>
-
-          <div class="col">
-            Tue
-            <div class="col minimumTemperature">10°C</div>
-            <div class="col maximumTemperature">18°C</div>
+            <div class="col">
+              Tue
+              <div class="col minimumTemperature">10°C</div>
+              <div class="col maximumTemperature">18°C</div>
+            </div>
           </div>
         </div>
+
+        <button type="button" class="btn btn-primary btn-lg more-information">
+          More Information
+        </button>
+
+        <footer>
+          <a href="https://github.com/Rayna-Lee/weather-app" target="blank">
+            Open-source code
+          </a>
+          by Rayna Lee
+        </footer>
+        <script src="src/index.js"></script>
       </div>
-
-      <button type="button" class="btn btn-primary btn-lg more-information">
-        More Information
-      </button>
-
-      <footer>
-        <a href="https://github.com/Rayna-Lee/weather-app" target="blank">
-          Open-source code
-        </a>
-        by Rayna Lee
-      </footer>
-      <script src="src/index.js"></script>
     </div>
   </body>
 </html>

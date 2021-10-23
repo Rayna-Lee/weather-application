@@ -1,11 +1,15 @@
 body {
-  border: 1px solid #adb2be;
-  border-radius: 4px;
   color: #5a6275;
   font-family: "Poppins", sans-serif;
-  margin: 0 auto;
   max-width: 65%;
-  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.app {
+  border: 1px solid #adb2be;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 10px 40px;
 }
 
 form {
