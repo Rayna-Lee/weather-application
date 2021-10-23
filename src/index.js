@@ -60,7 +60,9 @@ minuteNow.innerHTML = `${minute}`;
 //Show City Temperature Description when submitting
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
   let temperatureNow = document.querySelector("#temperature-now");
   temperatureNow.innerHTML = temperature;
 
@@ -75,8 +77,6 @@ function showTemperature(response) {
 
   let windspeed = document.querySelector("#wind-speed");
   windspeed.innerHTML = Math.round(response.data.wind.speed);
-
-  console.log(response.data.weather[0].icon);
 
   let iconImage = document.querySelector("#icon");
   let icon = response.data.weather[0].icon;
@@ -102,16 +102,9 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Tiong Bahru");
-
 //Current Location Button
 //Show City Temperature Desciption when clicking button
 function showWeatherCondition(response) {
-  console.log(response.data.main.temp);
-  console.log(response.data.name);
-  console.log(response.data.weather[0].description);
-  console.log(response.data);
-
   let cityLogged = response.data.name;
   let displayCity = document.querySelector("#city");
   displayCity.innerHTML = cityLogged;
@@ -146,3 +139,26 @@ function getCurrentLocation(event) {
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
+
+let celsiusTemperature = null;
+
+search("Tiong Bahru");
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let displayTemperatureNow = document.querySelector("#temperature-now");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  displayTemperatureNow.innerHTML = fahrenheitTemperature;
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let displayTemperatureNow = document.querySelector("#temperature-now");
+  displayTemperatureNow.innerHTML = celsiusTemperature;
+}
+
+let fahrenheitLink = document.querySelector("fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
