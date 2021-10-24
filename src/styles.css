@@ -31,10 +31,10 @@ footer {
   text-align: right;
 }
 
-#icon {
-  font-size: 10px;
-  text-align: center;
-  line-height: 100px;
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
 }
 
 #weather-description {
@@ -63,13 +63,14 @@ footer {
 }
 
 #weather-description {
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
 }
 
 .properties {
   font-size: 14px;
   text-align: center;
+  font-weight: 400;
 }
 
 .forecast {
