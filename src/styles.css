@@ -1,7 +1,7 @@
 body {
   color: #5a6275;
   font-family: "Poppins", sans-serif;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -12,7 +12,13 @@ body {
 }
 
 form {
-  padding: 20px 0 30px 0;
+  padding: 20px 0 0px 0;
+}
+
+#current-location {
+  position: relative;
+  left: 100px;
+  top: -39px;
 }
 
 h1 {
@@ -35,9 +41,9 @@ img {
   display: block;
   height: auto;
   margin: auto;
-  width: 50%;
+  width: 100%;
   position: relative;
-  left: 80px;
+  left: 30px;
 }
 
 #weather-description {
@@ -75,6 +81,7 @@ img {
   font-size: 14px;
   text-align: left;
   font-weight: 400;
+  margin-top: 60px;
 }
 
 .forecast {

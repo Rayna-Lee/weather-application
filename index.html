@@ -29,7 +29,7 @@
       <div class="app">
         <form class="form-inline" id="search-form">
           <div class="row">
-            <div class="col-9">
+            <div class="col-8">
               <input
                 class="form-control mr-sm-2"
                 type="search"
@@ -40,7 +40,7 @@
               />
             </div>
 
-            <div class="col-3">
+            <div class="col-2">
               <button
                 class="btn btn-primary my-2 my-sm-0 search"
                 type="submit"
@@ -49,13 +49,15 @@
                 <div>Search</div>
               </button>
 
-              <button
-                class="btn btn-success my-2 my-sm-0"
-                type="submit"
-                id="current-location"
-              >
-                <div>Current</div>
-              </button>
+              <div class="col-2">
+                <button
+                  class="btn btn-success my-2 my-sm-0"
+                  type="submit"
+                  id="current-location"
+                >
+                  <div>Current</div>
+                </button>
+              </div>
             </div>
           </div>
         </form>
@@ -75,11 +77,11 @@
         </h2>
 
         <div class="row">
-          <div class="col-3">
+          <div class="col-2">
             <img src="" alt="weather icon" id="icon" />
           </div>
 
-          <div class="col-6 weatherNow">
+          <div class="col-5 weatherNow">
             <span id="temperature-now">10</span>
             <span id="units">
               <span id="unitC"><a href="#" id="celsius-link">°C</a></span
@@ -88,7 +90,7 @@
             </span>
           </div>
 
-          <div class="col-3 properties">
+          <div class="col-5 properties">
             <div class="col" id="weather-description">mostly cloudy</div>
             <div class="col">Humidity: <span id="humidity">0</span>%</div>
             <div class="col">Windspeed: <span id="wind-speed">0</span>km/h</div>
