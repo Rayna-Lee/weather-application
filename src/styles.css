@@ -60,6 +60,7 @@ img {
 #units {
   color: #737a8a;
   font-size: 24px;
+  font-weight: lighter;
   cursor: pointer;
   transition: 200ms all ease-in-out;
   position: relative;
@@ -67,8 +68,14 @@ img {
   left: -20px;
 }
 
-#units:hover {
-  color: #cdccca;
+#units .active {
+  color: #5a6275;
+  cursor: default;
+  text-decoration: none;
+}
+
+#units .active:hover {
+  text-decoration: none;
 }
 
 #weather-description {

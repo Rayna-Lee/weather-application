@@ -147,14 +147,18 @@ search("Tiong Bahru");
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let displayTemperatureNow = document.querySelector("#temperature-now");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  displayTemperatureNow.innerHTML = fahrenheitTemperature;
+  displayTemperatureNow.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let displayTemperatureNow = document.querySelector("#temperature-now");
-  displayTemperatureNow.innerHTML = celsiusTemperature;
+  displayTemperatureNow.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
