@@ -57,8 +57,30 @@ dayNow.innerHTML = `${day}`;
 hourNow.innerHTML = `${hour}`;
 minuteNow.innerHTML = `${minute}`;
 
-//Show City Temperature Description when submitting
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
 
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-2">
+              Fri
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt=""
+                width="30"
+                class="weather-forecast-icon"
+              />
+              <div class="col minimumTemperature">11°C</div>
+              <div class="col maximumTemperature">20°C</div>
+          </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//Show City Temperature Description when submitting
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
@@ -84,6 +106,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
+
+  showForecast();
 }
 
 function search(city) {
