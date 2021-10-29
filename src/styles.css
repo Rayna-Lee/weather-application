@@ -40,7 +40,7 @@ footer {
   text-align: right;
 }
 
-img {
+#icon {
   display: block;
   height: auto;
   margin: auto;
@@ -94,13 +94,26 @@ img {
   margin-top: 60px;
 }
 
+.weather-forecast-icon {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
 .forecast {
   font-size: 18px;
   margin: 40px 0 40px 0;
+  text-align: center;
 }
 
 .minimumTemperature {
   color: #adb2be;
+  text-align: center;
+}
+
+.maximumTemperature {
+  text-align: center;
 }
 
 .more-information {
