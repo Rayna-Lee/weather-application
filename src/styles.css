@@ -17,9 +17,13 @@ form {
 }
 
 #current-location {
+  border-radius: 10px;
+  background-color: transparent;
+  color: #5a6275;
+  font-size: 30px;
   position: relative;
-  left: 100px;
-  top: -39px;
+  left: 50px;
+  top: -20px;
 }
 
 h1 {

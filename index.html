@@ -22,6 +22,11 @@
     />
 
     <link rel="stylesheet" href="src/styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/53dab61bbc.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -29,7 +34,7 @@
       <div class="app">
         <form class="form-inline" id="search-form">
           <div class="row">
-            <div class="col-8">
+            <div class="col-9">
               <input
                 class="form-control mr-sm-2"
                 type="search"
@@ -49,13 +54,9 @@
                 <div>Search</div>
               </button>
 
-              <div class="col-2">
-                <button
-                  class="btn btn-success my-2 my-sm-0"
-                  type="submit"
-                  id="current-location"
-                >
-                  <div>Current</div>
+              <div class="col-1" id="current-location">
+               
+                  <i class="far fa-compass" id="current-location"></i>
                 </button>
               </div>
             </div>
