@@ -66,8 +66,6 @@ function formatDay(timestamp) {
 }
 
 function showForecast(response) {
-  console.log(response.data);
-  console.log(response.data.daily[0].temp);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -215,9 +213,3 @@ function showCelsiusTemperature(event) {
   let displayTemperatureNow = document.querySelector("#temperature-now");
   displayTemperatureNow.innerHTML = Math.round(celsiusTemperature);
 }
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
