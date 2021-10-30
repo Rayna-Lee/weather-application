@@ -173,15 +173,15 @@ function showWeatherCondition(response) {
 
 //Get Current Location via GPS
 function showPosition(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
 
   let units = `metric`;
   let apiKey = `c119ffef35b7245a5e03b6e5724ae961`;
   let apiUrlCurrentLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+  console.log(apiUrlCurrentLocation);
+
   axios.get(apiUrlCurrentLocation).then(showWeatherCondition);
 }
 
@@ -193,23 +193,13 @@ function getCurrentLocation(event) {
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
 
-let celsiusTemperature = null;
-
 search("Tiong Bahru");
 
-function showFahrenheitTemperature(event) {
+function getInformation(event) {
   event.preventDefault();
-  let displayTemperatureNow = document.querySelector("#temperature-now");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  displayTemperatureNow.innerHTML = Math.round(fahrenheitTemperature);
+
+  window.open(`https://openweathermap.org/`, `_blank`);
 }
 
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let displayTemperatureNow = document.querySelector("#temperature-now");
-  displayTemperatureNow.innerHTML = Math.round(celsiusTemperature);
-}
+let moreInfo = document.querySelector("#more-information");
+moreInfo.addEventListener("click", getInformation);
