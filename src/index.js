@@ -109,7 +109,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(showForecast);
 }
 
-//Show City Temperature Description when submitting
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
@@ -155,8 +154,6 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-//Current Location Button
-//Show City Temperature Desciption when clicking button
 function showWeatherCondition(response) {
   let cityLogged = response.data.name;
   let displayCity = document.querySelector("#city");
@@ -171,7 +168,6 @@ function showWeatherCondition(response) {
   description.innerHTML = weatherDescription;
 }
 
-//Get Current Location via GPS
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -179,8 +175,6 @@ function showPosition(position) {
   let units = `metric`;
   let apiKey = `c119ffef35b7245a5e03b6e5724ae961`;
   let apiUrlCurrentLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-
-  console.log(apiUrlCurrentLocation);
 
   axios.get(apiUrlCurrentLocation).then(showWeatherCondition);
 }
@@ -193,8 +187,6 @@ function getCurrentLocation(event) {
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
 
-search("Tiong Bahru");
-
 function getInformation(event) {
   event.preventDefault();
 
@@ -203,3 +195,5 @@ function getInformation(event) {
 
 let moreInfo = document.querySelector("#more-information");
 moreInfo.addEventListener("click", getInformation);
+
+search("Tiong Bahru");

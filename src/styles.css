@@ -19,10 +19,11 @@ form {
 #current-location {
   background-color: transparent;
   color: #5a6275;
+  display: inline;
   font-size: 30px;
   position: relative;
   left: 50px;
-  top: -20px;
+  bottom: 20px;
 }
 
 h1 {
