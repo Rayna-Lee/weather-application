@@ -73,7 +73,7 @@ function showForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7 && index > 0) {
       forecastHTML =
         forecastHTML +
         `
@@ -176,11 +176,7 @@ function showPosition(position) {
   let apiKey = `c119ffef35b7245a5e03b6e5724ae961`;
   let apiUrlCurrentLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrlCurrentLocation).then(showWeatherCondition);
-
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={current,minutely,hourly,alert}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showForecast);
+  axios.get(apiUrlCurrentLocation).then(showTemperature);
 }
 
 function getCurrentLocation(event) {
@@ -193,7 +189,6 @@ currentLocation.addEventListener("click", getCurrentLocation);
 
 function getInformation(event) {
   event.preventDefault();
-
   window.open(`https://openweathermap.org/`, `_blank`);
 }
 
