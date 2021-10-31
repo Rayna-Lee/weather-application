@@ -177,6 +177,10 @@ function showPosition(position) {
   let apiUrlCurrentLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrlCurrentLocation).then(showWeatherCondition);
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={current,minutely,hourly,alert}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getCurrentLocation(event) {
